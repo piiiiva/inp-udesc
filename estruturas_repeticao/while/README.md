@@ -10,12 +10,11 @@ _ __
 uma sequência, definindo a escala de incremento. Por exemplo, quero listar os
 números entre 0 e 10 incrementando de 5 em 5.
 
-[ ] 4. Desenvolva um algoritmo para calcular o total de uma compra. Deverá ser informado a
+[x] 4. Desenvolva um algoritmo para calcular o total de uma compra. Deverá ser informado a
 descrição do produto, o preço e a quantidade de cada item. A quantidade de itens a
 serem cadastrados deve ser informada pelo usuário.
 
-[ ] 5. Desenvolva um algoritmo para calcular o total de uma compra. Deverá ser informado a
+[x] 5. Desenvolva um algoritmo para calcular o total de uma compra. Deverá ser informado a
 descrição do produto, o preço e a quantidade de cada item. Quando o valor do item
-for acima de R$ 10,00 aplique um desconto de 5%. A cada ciclo, deve ser solicitado ao
-usuário se deseja inserir novo item.
+for acima de R$ 10,00 aplique um desconto de 5%. A cada ciclo, deve ser solicitado ao usuário se deseja inserir novo item.
 _ __
