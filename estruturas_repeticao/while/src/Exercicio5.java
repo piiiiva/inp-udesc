@@ -20,6 +20,10 @@ public class Exercicio5 {
             valor = Float.parseFloat(JOptionPane.showInputDialog(null, "Informe o valor unitário de cada item")); 
             int quantidadeItem = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe a quantidade para esse item"));
             
+            if (valor >= 10) {
+               valor = valor * 0.9F;
+            };
+
             totalItem = valor * quantidadeItem;
     
             total += totalItem; 
