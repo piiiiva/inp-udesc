@@ -3,10 +3,10 @@
 _ __
 [x] 1. Desenvolva um algoritmo para listar todos os números entre 0 e 10.
 
-[ ] 2. Desenvolva um algoritmo que permita ao usuário verificar se uma sequência (de 0 a
+[x] 2. Desenvolva um algoritmo que permita ao usuário verificar se uma sequência (de 0 a
 100 por exemplo) de números são pares ou impares.
 
-[ ] 3. Desenvolva um algoritmo que permita ao usuário incrementar um valor numérico em
+[x] 3. Desenvolva um algoritmo que permita ao usuário incrementar um valor numérico em
 uma sequência, definindo a escala de incremento. Por exemplo, quero listar os
 números entre 0 e 10 incrementando de 5 em 5.
 
