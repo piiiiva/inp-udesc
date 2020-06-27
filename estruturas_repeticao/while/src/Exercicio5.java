@@ -21,7 +21,7 @@ public class Exercicio5 {
             int quantidadeItem = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe a quantidade para esse item"));
             
             if (valor >= 10) {
-               valor = valor * 0.9F;
+               valor = valor * 0.95F;
             };
 
             totalItem = valor * quantidadeItem;
@@ -32,8 +32,9 @@ public class Exercicio5 {
             System.out.println("Quantidade: " + quantidadeItem);
             System.out.println("Total: " + totalItem);
     
-            adicionarItem = Integer.parseInt(JOptionPane.showInputDialog(null, "Para incluir novo item digite 1, ou 0 para encerrar."));
-        } while (adicionarItem == 1);
+            adicionarItem = JOptionPane.showConfirmDialog(null, "Deseja continuar comprando?", "Selecione uma opção", JOptionPane.YES_NO_OPTION);
+
+        } while (adicionarItem == 0);
 
         System.out.println("Total da Compra: " + total);
 
