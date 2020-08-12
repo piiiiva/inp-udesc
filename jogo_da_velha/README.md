@@ -1,14 +1,13 @@
-## Getting Started
+### DESENVOLVER O JOGO DA VELHA
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
-
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-## Dependency Management
-
-The `JAVA DEPENDENCIES` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-pack/blob/master/release-notes/v0.9.0.md#work-with-jar-files-directly).
+#### Critérios para elaboração do jogo:
+- O usuário deve jogar contra o computador ou contra outro usuário;
+  - Se optar por jogar contra o computador, a jogada do computador deve ser
+valor randômico para linha e coluna;
+  - Se optar por jogar contra outro jogador, deve ser informado o nome do outro
+jogador;
+- Os símbolos utilizados dever a letra X e a letra O;
+- O usuário escolhe o símbolo que vai jogar e informa o seu nome;
+- Quando um dos jogadores obter uma trilha, seja na linha, coluna ou em diagonal deve
+ser mostrado o nome do vencedor;
+- Solicitar ao usuário de deseja jogar novamente;
