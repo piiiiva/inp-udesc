@@ -5,11 +5,13 @@ import javax.swing.JOptionPane;
 public class App {
     public static void main(String[] args) throws Exception {
         // Definir o tamanho do campo de batalha (10x10 ou dinâmico);
-        int campoDeBatalha[][] = new int[10][10];
 
         String jogador = JOptionPane.showInputDialog(null, "Digite o seu nome");
-        int campoDeBatalhaJogador[][] = campoDeBatalha;
-        int campoDeBatalhaComputador[][] = campoDeBatalha;
+        int tamanhoColunas = 10;
+        int tamanhoLinhas = 10;
+
+        int campoDeBatalhaJogador[][] = new int[tamanhoColunas][tamanhoLinhas];
+        int campoDeBatalhaComputador[][] = new int[tamanhoColunas][tamanhoLinhas];
 
         // Variáveis de cada elemento do tabuleiro
         int agua = 0;
@@ -140,8 +142,8 @@ public class App {
             Random aleatorio = new Random();
 
             do {
-                linha = aleatorio.nextInt(10);
-                coluna = aleatorio.nextInt(10);
+                linha = aleatorio.nextInt(tamanhoLinhas);
+                coluna = aleatorio.nextInt(tamanhoColunas);
     
             // Verificar se a coluna, linha já não está ocupada;
                 if (campoDeBatalhaComputador[coluna][linha] == agua) {
@@ -164,8 +166,8 @@ public class App {
             Random aleatorio = new Random();
 
             do {
-                linha = aleatorio.nextInt(10);
-                coluna = aleatorio.nextInt(10);
+                linha = aleatorio.nextInt(tamanhoLinhas);
+                coluna = aleatorio.nextInt(tamanhoColunas);
     
             // Verificar se a coluna, linha já não está ocupada;
                 if (campoDeBatalhaComputador[coluna][linha] == agua) {
@@ -206,7 +208,7 @@ public class App {
                 int coluna = -1;
 
                 // Faz a jogada
-                while (linha < 0 || linha > 9) {
+                while (linha < 0 || linha > (tamanhoLinhas - 1)) {
                     linha = Integer.parseInt(
                             JOptionPane.showInputDialog(
                                 null, jogador + ", informe a linha desejada. \n Entre 1 e 10."
@@ -214,7 +216,7 @@ public class App {
                     linha = linha -1;
                 }
 
-                while (coluna < 0 || coluna > 9) {
+                while (coluna < 0 || coluna > (tamanhoColunas - 1)) {
                     coluna = Integer.parseInt(
                             JOptionPane.showInputDialog(
                                 null, jogador + ", informe a coluna desejada. \n Entre 1 e 10"
@@ -253,12 +255,54 @@ public class App {
                 }
             } while (localValido == false);
 
+            // Jogada Computador
+            do {
+                Random aleatorio = new Random();
+                int linha = -1;
+                int coluna = -1;
+
+                linha = aleatorio.nextInt(tamanhoLinhas);
+                coluna = aleatorio.nextInt(tamanhoColunas);
+
+                if (campoDeBatalhaJogador[coluna][linha] <= 0) {
+                    localValido = true;
+
+                    if (campoDeBatalhaJogador[coluna][linha] == agua) {
+                        campoDeBatalhaJogador[coluna][linha] = 3;
+
+                        System.out.println("O computador errou o tiro!");
+                    } else if(campoDeBatalhaJogador[coluna][linha] == navio) {
+                        campoDeBatalhaJogador[coluna][linha] = 1;
+
+                        System.out.println("O computador afundou um navio seu!");
+
+                        pontosComputador++;
+                        } else {
+                            campoDeBatalhaJogador[coluna][linha] = 2;
+
+                            System.out.println("O computador acertou uma bomba! ");
+
+                            pontosComputador--;
+                        }
+
+                } else {
+                    localValido = false;
+                    linha = -1;
+                    coluna = -1;
+                }
+    
+            
+            } while (localValido == false);
+
+
             if (jogadas > 1) {
                 JOptionPane.showMessageDialog(null, 
-                    "Você ainda possui " + jogadas + " jogadas. Boa sorte!"
+                    "Sua vez novamente! Você ainda possui " + jogadas + " jogadas. Boa sorte!"
                 );
             }
             // lógica para checar se tem vencedor;
+
+
         }
     
 
@@ -266,9 +310,7 @@ public class App {
 }
 
 
-        // Sistema de pontos, cada navio gera um ponto;
-        // Cada jogada retorna um alerta e a matriz novamente?
-            // após o tiro ser dado, o tabuleiro é alterado, mostrando o tiro que foi dado(se acertou ou errou)
+        // OK - Sistema de pontos, cada navio gera um ponto;
         // Ao final das jogadas retornar um resumo das jogas (disparos, erros, acertos, pontos);
             // Armazenar esses tiros em um array de resultado?
         // Listar todas as posições e quipamentos que não foram atingidos
